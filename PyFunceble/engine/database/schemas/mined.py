@@ -50,7 +50,7 @@ License:
     limitations under the License.
 """
 
-from sqlalchemy import Column, ForeignKey, Integer, Text
+from sqlalchemy import BigInteger, Column, ForeignKey, Text
 from sqlalchemy.orm import relationship
 
 from ..loader.base_class import DatabaseBase
@@ -62,12 +62,12 @@ class Mined(DatabaseBase):
     """
 
     subject_id = Column(
-        Integer,
+        BigInteger,
         ForeignKey("pyfunceble_status.id", ondelete="CASCADE", onupdate="CASCADE"),
         nullable=False,
     )
     file_id = Column(
-        Integer,
+        BigInteger,
         ForeignKey("pyfunceble_file.id", ondelete="CASCADE", onupdate="CASCADE"),
         nullable=False,
     )

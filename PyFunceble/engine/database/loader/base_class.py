@@ -53,7 +53,7 @@ License:
 from datetime import datetime
 
 from inflection import underscore
-from sqlalchemy import Column, DateTime, Integer
+from sqlalchemy import BigInteger, Column, DateTime
 from sqlalchemy.ext.declarative import declarative_base, declared_attr
 
 
@@ -71,7 +71,7 @@ class CustomClass:
         # pylint: disable=no-member
         return "pyfunceble_" + underscore(cls.__name__).lower()
 
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(BigInteger, primary_key=True, nullable=False)
     created = Column(DateTime(), default=datetime.utcnow, nullable=False)
     modified = Column(DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
 

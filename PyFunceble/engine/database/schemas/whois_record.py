@@ -50,7 +50,7 @@ License:
     limitations under the License.
 """
 
-from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy import BigInteger, Column, String, Text
 
 from ..loader.base_class import DatabaseBase
 
@@ -62,7 +62,7 @@ class WhoisRecord(DatabaseBase):
 
     subject = Column(Text, nullable=False, unique=True)
     expiration_date = Column(Text, nullable=False)
-    epoch = Column(Integer, nullable=False)
+    epoch = Column(BigInteger, nullable=False)
     state = Column(String(80), nullable=False)
     record = Column(Text, nullable=True)
     server = Column(Text, nullable=True)

@@ -52,7 +52,7 @@ License:
 
 from datetime import datetime
 
-from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, Text
+from sqlalchemy import BigInteger, Boolean, Column, DateTime, ForeignKey, Integer, Text
 from sqlalchemy.orm import relationship
 
 from ..loader.base_class import DatabaseBase
@@ -64,7 +64,7 @@ class Status(DatabaseBase):
     """
 
     file_id = Column(
-        Integer,
+        BigInteger,
         ForeignKey("pyfunceble_file.id", ondelete="CASCADE", onupdate="CASCADE"),
         nullable=False,
     )
